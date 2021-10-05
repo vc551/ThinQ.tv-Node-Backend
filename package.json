@@ -1,0 +1,22 @@
+{
+  "name": "thinq.tv-node-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vc551/ThinQ.tv-Node-Backend.git"
+  },
+  "author": "Vikramjit Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vc551/ThinQ.tv-Node-Backend/issues"
+  },
+  "homepage": "https://github.com/vc551/ThinQ.tv-Node-Backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
