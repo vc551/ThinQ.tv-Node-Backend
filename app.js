@@ -22,7 +22,7 @@ app.get("/mediaupload", (req, res) => {
 
 app.post("/mediaupload", (req, res, next) => {
     const form = formidable({
-        uploadDir: "~/Media",
+        uploadDir: path.join(require('os').homedir(), "/Media"),
         multiples: true,
         keepExtensions: true
     });
