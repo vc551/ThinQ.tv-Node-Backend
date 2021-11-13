@@ -23,7 +23,7 @@ router.post("/", (req, res, next) => {
             res.render("mediaupload.ejs", {navbarItems: navbarItems, success: false, error: true});
         }
         console.log("Uploaded Files: ", files);
-        res.render("mediaupload.ejs", {success: true, error: false});
+        res.render("mediaupload.ejs", {navbarItems: navbarItems, success: true, error: false});
     });
 });
 
