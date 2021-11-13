@@ -20,7 +20,7 @@ router.post("/", (req, res, next) => {
     form.parse(req, (err, fields, files) => {
         if (err) {
             console.log(err);
-            res.render("mediaupload.ejs", {success: false, error: true});
+            res.render("mediaupload.ejs", {avbarItems: navbarItems, success: false, error: true});
         }
         console.log("Uploaded Files: ", files);
         res.render("mediaupload.ejs", {success: true, error: false});
