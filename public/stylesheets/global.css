@@ -1,0 +1,12 @@
+.main-content {
+    min-height: 67vh;
+}
+
+.fill-content {
+    min-height: 100%;
+    min-width: 100%;
+}
+
+#Adafruit-logo {
+    filter: invert();
+}

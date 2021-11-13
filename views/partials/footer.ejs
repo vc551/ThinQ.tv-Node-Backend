@@ -1,56 +1,22 @@
-    <div class="row py-4">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded shadow">
-            <span class="navbar-brand mb-0 h1" href="#">
-                Made Possible Using
-            </span>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarFootNav" aria-controls="navbarFootNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarFootNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="https://thinq.tv"> <!-- ThinQ.tv -->
-                        <img src="/assets/thinq logo.png" height="48" class="d-inline-block aligh-text-top">
-                        ThinQ.tv
-                    </a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://raspberrypi.com"> <!-- Raspberry Pi -->
-                        <img src="/assets/rpi logo.png" height="48" class="d-inline-block aligh-text-top">
-                        Raspberry Pi
-                    </a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://adafruit.com"> <!-- Adafruit --> <!-- PLEASE ASK FOR LOGO USAGE BASED ON TRADEMARK -->
-                        <img src="/assets/adafruit logo.png" height="48" class="d-inline-block aligh-text-top" style= "filter: invert();">
-                        Adafruit
-                    </a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://waveshare.com"> <!-- Waveshare --> <!-- PLEASE ASK FOR LOGO USAGE BASED ON TRADEMARK -->
-                        <img src="/assets/waveshare logo.png" height="48" class="d-inline-block aligh-text-top">
-                        Waveshare
-                    </a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://seeedstudio.com"> <!-- SEEEDStudio --> <!-- PLEASE ASK FOR LOGO USAGE BASED ON TRADEMARK -->
-                        <img src="/assets/seeed logo.svg" height="48" class="d-inline-block aligh-text-top">
-                        SEEED Studio
-                    </a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://videolan.org"> <!-- Waveshare --> <!-- PLEASE ASK FOR LOGO USAGE BASED ON TRADEMARK -->
-                        <img src="/assets/vlc logo.svg" height="48" class="d-inline-block aligh-text-top">
-                        VLC
-                    </a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://getbootstrap.com"> <!-- Bootstrap -->
-                        <img src="/assets/bootstrap logo.svg" height="48" class="d-inline-block aligh-text-top">
-                        Bootstrap 5
-                    </a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://nodejs.org"> <!-- NodeJS --> 
-                        <img src="/assets/nodejs logo.png" height="48" class="d-inline-block aligh-text-top">
-                        NodeJS
-                    </a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://balena.io"> <!-- BalenaEtcher --> 
-                        <img src="/assets/balenaEtcher logo.svg" height="48" class="d-inline-block aligh-text-top">
-                        BalenaEtcher
-                    </a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://github.com"> <!-- GitHub --> 
-                        <img src="/assets/github logo.png" height="48" class="d-inline-block aligh-text-top">
-                        GitHub
-                    </a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</body>
+        <div class="row py-4">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light rounded shadow">
+                <span class="navbar-brand mb-0 h1" href="#">
+                    Made Possible Using
+                </span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarFootNav" aria-controls="navbarFootNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarFootNav">
+                    <ul class="navbar-nav">
+                        <% for(var name in navbarItems){  %>
+                            <li class="nav-item"><a class="nav-link"  href="<%= navbarItems[name].link %>">
+                                <img src="<%= navbarItems[name].imgsrc %>" id = "<%= name%>-logo" height="48" class="d-inline-block aligh-text-top">
+                                <%- name%>
+                            </a></li>
+                        <% } %>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </body>
 </html>

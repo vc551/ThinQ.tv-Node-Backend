@@ -1,0 +1,9 @@
+<%- include('partials/header.ejs', {pageName: pageName})%>
+
+<div class="row py-4 main-content">
+    <div class="container-fluid bg-light p-4 rounded shadow">
+        <iframe class = "fill-content" src="<%= embeddedURL %>" alt="Internet might not be available, try going to <%= embeddedURL %> on an internet connected device">Loading</iframe>
+    </div>
+</div>
+
+<%- include('partials/footer.ejs') %>

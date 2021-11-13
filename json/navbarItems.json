@@ -1,0 +1,61 @@
+{
+    "ThinQ.tv":
+    {
+        "link": "https://thinq.tv",
+        "imgsrc": "/assets/thinq logo.png" 
+    },
+    
+    "Raspberry Pi":
+    {
+        "link": "https://raspberrypi.com",
+        "imgsrc": "/assets/rpi logo.png"
+    },
+
+    "Adafruit":
+    {
+        "link": "https://adafruit.com",
+        "imgsrc": "/assets/adafruit logo.png"
+    },
+
+    "Waveshare":
+    {
+        "link": "https://waveshare.com",
+        "imgsrc": "/assets/waveshare logo.png"
+    },
+
+    "SEEEDStudio":
+    {
+        "link": "https://seeedstudio.com",
+        "imgsrc": "/assets/seeed logo.svg"
+    },
+
+    "VLC":
+    {
+        "link": "https://videolan.org",
+        "imgsrc": "/assets/vlc logo.svg" 
+    },
+    
+    "Bootstrap":
+    {
+        "link": "https://geetbootstrap.com",
+        "imgsrc": "/assets/bootstrap logo.svg"
+    },
+
+    "NodeJS":
+    {
+        "link": "https://nodejs.org",
+        "imgsrc": "/assets/nodejs logo.png"
+    },
+
+    "BalenaEtcher":
+    {
+        "link": "https://balena.io",
+        "imgsrc": "/assets/balenaEtcher logo.svg"
+    },
+
+    "GitHub":
+    {
+        "link": "https://github.com",
+        "imgsrc": "/assets/github logo.png"
+    }
+}

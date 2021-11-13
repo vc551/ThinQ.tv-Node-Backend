@@ -1,11 +1,10 @@
-// import 'media-slideshow-component';
-const { localsName } = require("ejs");
 var express = require("express");
 var app = express();
 
-var formidable = require("formidable");
-var path = require("path");
-var fs = require('fs');
+var embeddedURLs = require("./json/embeddedURLs.json");
+var navbarItems = require("./json/navbarItems.json");
+
+var mediaUploadRoutes = require("./routes/mediaupload");
 
 var port = 80;
 
@@ -13,29 +12,18 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname+"/public"))
 
 app.get("/", (req, res) => {
-    res.render("home.ejs");
+    res.render("home.ejs", {navbarItems: navbarItems});
 });
 
-app.get("/mediaupload", (req, res) => {
-    res.render("mediaupload.ejs", {success: false, error: false});
+app.get("/feedbackform", (req, res) => {
+    res.render("pageWithEmbeddedView.ejs", {navbarItems: navbarItems, pageName: "Feedback Form", embeddedURL: embeddedURLs.feedbackform});
 });
 
-app.post("/mediaupload", (req, res, next) => {
-    const form = formidable({
-        uploadDir: path.join(require('os').homedir(), "/Media"),
-        multiples: true,
-        keepExtensions: true
-    });
-
-    form.parse(req, (err, fields, files) => {
-        if (err) {
-            console.log(err);
-            res.render("mediaupload.ejs", {success: false, error: true});
-        }
-        console.log("Uploaded Files: ", files);
-        res.render("mediaupload.ejs", {success: true, error: false});
-    });
+app.get("/documentation", (req, res) => {
+    res.render("pageWithEmbeddedView.ejs", {navbarItems: navbarItems, pageName: "Documentation", embeddedURL: embeddedURLs.documentation});
 });
+
+app.use("/mediaupload", mediaUploadRoutes);
 
 app.listen(process.env.PORT||port,process.env.IP,()=>{
     console.log("Server started on port "+port);
