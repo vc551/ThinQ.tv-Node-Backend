@@ -1,7 +1,11 @@
 # ThinQ.tv Tiny Video Player
-#### Current Version: 1.0.0 (first release)
+#### Current Version: 1.0.1 (first release version)
 ## NodeJS Backend
 This **NodeJS** app is a website that provides a user-friendly way to interface with the **Raspbeery Pi** hardware driving the video player. The device is intended to slideshow a collection of user uploaded photos and videos. This server provides a way for the user to do so in a simple, user friendly way.
+### Changes from last version
+- Added Icons for Media Manage, Feedback Form, Documentation pages
+- Changed name of the Manage Media page
+- Remove unused `feedbackform.ejs` file
 ### Dependencies
 - [ExpressJS](https://www.npmjs.com/package/express) - For Web Server Operation
 - [EJS](https://www.npmjs.com/package/ejs) - For Website layout
