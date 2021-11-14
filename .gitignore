@@ -1,4 +1,7 @@
 .gitignore
 uploads/
-cert/
+cert/server.cert
+cert/server.key
+public/Media
 piInstallScript.sh
+**/.DS_Store

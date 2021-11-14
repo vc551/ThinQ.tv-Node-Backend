@@ -10,3 +10,19 @@
 #Adafruit-logo {
     filter: invert();
 }
+
+#media-view-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#media-preview-card {
+    width: 17.4vw;
+    min-width: 200px;
+    aspect-ratio: 1/1.6;
+}
+
+#media-preview {
+    aspect-ratio: 3/2;
+    object-fit: scale-down;
+}

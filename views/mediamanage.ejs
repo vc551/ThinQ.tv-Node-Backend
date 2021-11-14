@@ -1,0 +1,26 @@
+<%- include('partials/header.ejs', {pageName: "Media Upload"})%>
+
+<div class="row py-4 main-content">
+    <div class="container-fluid bg-light p-4 rounded shadow gap-4" id="media-view-container">
+        <% fileList.forEach(([type, size], path, map) => { %>
+            <div class = "card shadow" id="media-preview-card">
+                <% if (type == 'image') { %>
+                    <img src = "<%= path %>" class="card-img-top" id = "media-preview" alt="<%= path %>">
+                <% } else if (type == 'video') { %>
+                    <video src = "<%= path %>" class="card-img-top" id = "media-preview" alt="<%= path %>"></video>
+                <% } %>
+                <div class="card-body">
+                    <h5 class="card-title">File Type: <%- type %></h5>
+                    <p class="card-text">Path: <%- path %></p>
+                    <p class="card-text">Size: <%- size %></p>
+                </div>
+                <div class="card-footer btn-group p-1" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary">View</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<%- include('partials/footer.ejs') %>

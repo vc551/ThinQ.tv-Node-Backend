@@ -1,0 +1,12 @@
+{
+    "images": [
+        ".svg",
+        ".png",
+        ".jpg",
+        ".jpeg"
+    ],
+
+    "videos": [
+        ".mp4"
+    ]
+}
