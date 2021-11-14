@@ -3,11 +3,11 @@
                 <span class="navbar-brand mb-0 h1" href="#">
                     Made Possible Using
                 </span>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarFootNav" aria-controls="navbarFootNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarFootNav" aria-controls="#navbarFootNav" aria-expanded="false" aria-label="Toggle Footer navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarFootNav">
-                    <ul class="navbar-nav">
+                    <ul class="nav navbar-nav">
                         <% for(var name in navbarItems){  %>
                             <li class="nav-item"><a class="nav-link"  href="<%= navbarItems[name].link %>">
                                 <img src="<%= navbarItems[name].imgsrc %>" id = "<%= name%>-logo" height="48" class="d-inline-block aligh-text-top">

@@ -1,0 +1,17 @@
+<%- include('partials/header.ejs', {pageName: " View " + fileName}) %>
+
+<div class="row py-4 main-content">
+    <div class="container-fluid bg-light p-4 rounded shadow">
+        <div class="d-grid gap-4">
+            <a class="btn btn-info" href="/Media/<%= fileName %>" role="button">Full Screen</a>
+            <a class="btn btn-danger" href="#" role="button">Delete</a>
+        </div>
+        <% if (fileInfo[0] == 'Image') { %>
+            <img class = "media-content rounded shadow mt-4" src="/media/<%= fileName %>" alt="<%= fileName %>">
+        <% } else if (fileInfo[0] == 'Video') { %>
+            <video controls autoplay muted class = "media-content rounded shadow mt-4" src = "/Media/<%= fileName %>" alt="<%= fileName %>"></video>
+        <% } %>
+    </div>
+</div>
+
+<%- include('partials/footer.ejs') %>

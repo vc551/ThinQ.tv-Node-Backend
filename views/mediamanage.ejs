@@ -1,25 +1,44 @@
 <%- include('partials/header.ejs', {pageName: "Media Upload"})%>
 
 <div class="row py-4 main-content">
-    <div class="container-fluid bg-light p-4 rounded shadow gap-4" id="media-view-container">
-        <% fileList.forEach(([type, size], path, map) => { %>
-            <div class = "card shadow" id="media-preview-card">
-                <% if (type == 'image') { %>
-                    <img src = "<%= path %>" class="card-img-top" id = "media-preview" alt="<%= path %>">
-                <% } else if (type == 'video') { %>
-                    <video src = "<%= path %>" class="card-img-top" id = "media-preview" alt="<%= path %>"></video>
-                <% } %>
-                <div class="card-body">
-                    <h5 class="card-title">File Type: <%- type %></h5>
-                    <p class="card-text">Path: <%- path %></p>
-                    <p class="card-text">Size: <%- size %></p>
+    <div class="container bg-light p-3 rounded shadow">
+        <% if (fileList.size == 0) { %>
+            <div class="alert alert-primary" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+                <div>
+                    <h1>Alert - No Media</h1>
                 </div>
-                <div class="card-footer btn-group p-1" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-primary">View</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                </div>
+                <hr>
+                <p>There are no media files currently present on the device. Maybe upload some files. If still no files show up, try refreshing this webpage.</p>
             </div>
-        <% }); %>
+        <% } else { %>
+            <div class = "gap-4 d-flex flex-wrap">
+                <% fileList.forEach(([type, size], file, map) => { %>
+                    <div class = "card shadow" id="media-preview-card">
+                        <% if (type == 'Image') { %>
+                            <img src = "/Media/<%= file %>" class="card-img-top rounded-top" id = "media-preview-card-view" alt="<%= file %>">
+                        <% } else if (type == 'Video') { %>
+                            <video src = "/Media/<%= file %>" class="card-img-top rounded-top" id = "media-preview-card-view" alt="<%= file %>"></video>
+                        <% } %>
+                        <div class="card-body">
+                            <h5 class="card-title">File Type: <%- type %></h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Size: <%- size %></h6>
+                            <p class="card-text">Path: /Media/<%- file %></p>
+                        </div>
+                        <div class="card-footer btn-group p-1" role="group" aria-label="Basic example">
+                            <a class="btn btn-primary" href="/mediamanage/<%= file %>" role="button">View</a>
+                            <a class="btn btn-info" href="/Media/<%= file %>" role="button">Full Screen</a>
+                            <form class="btn-group" action = "/mediamanage/<%= file %>?_method=DELETE" method = "POST">
+                                <i></i> <!-- Fakes Item to the left of Delete Button to make it appear in single button group-->
+                                <button class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        <% } %>
     </div>
 </div>
 
