@@ -3,8 +3,17 @@
 <div class="row py-4 main-content">
     <div class="container-fluid bg-light p-4 rounded shadow">
         <div class="d-grid gap-4">
-            <a class="btn btn-info" href="/Media/<%= fileName %>" role="button">Full Screen</a>
-            <a class="btn btn-danger" href="#" role="button">Delete</a>
+            <div class = "card">
+                <div class="card-body">
+                    <h5 class="card-title"><%- fileName %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%- fileInfo[0] %> File</h6>
+                    <p class="card-text">File Size: <%- fileInfo[1] %></p>
+                        <a class="btn btn-info" href="/Media/<%= fileName %>" role="button">Full Screen</a>
+                        <form class="btn-group" action = "/mediamanage/<%= fileName %>?_method=DELETE" method = "POST" onsubmit="return confirm('Are you sure you want to delete this <%= fileInfo[0] %>?');">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                </div>
+            </div>
         </div>
         <% if (fileInfo[0] == 'Image') { %>
             <img class = "media-content rounded shadow mt-4" src="/media/<%= fileName %>" alt="<%= fileName %>">

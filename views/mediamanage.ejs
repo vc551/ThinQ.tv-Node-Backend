@@ -30,7 +30,7 @@
                         <div class="card-footer btn-group p-1" role="group" aria-label="Basic example">
                             <a class="btn btn-primary" href="/mediamanage/<%= file %>" role="button">View</a>
                             <a class="btn btn-info" href="/Media/<%= file %>" role="button">Full Screen</a>
-                            <form class="btn-group" action = "/mediamanage/<%= file %>?_method=DELETE" method = "POST">
+                            <form class="btn-group" action = "/mediamanage/<%= file %>?_method=DELETE" method = "POST" onsubmit="return confirm('Are you sure you want to delete this <%= type.toLowerCase() %>?');">
                                 <i></i> <!-- Fakes Item to the left of Delete Button to make it appear in single button group-->
                                 <button class="btn btn-danger">Delete</button>
                             </form>
