@@ -13,6 +13,7 @@ var fs = require("fs")
 var path = require("path");
 var fileList = new Map();
 
+// Update fileList map
 fs.readdir(path.join(require('os').homedir(), "/Media"), (err, files) => {
     if (err) {
         console.log(err);
@@ -52,14 +53,6 @@ router.get("/", (req, res) => {
 // GET route for particular media file
 router.get("/:id", (req, res) => {
     res.render("mediamanageWithEmbeddedView", {navbarItems: navbarItems, fileName: req.params.id, fileInfo: fileList.get(req.params.id)})
-});
-
-router.post("/:id", (req, res) => {
-    console.log("POST");
-    // fs.unlinkSync(path.join(require('os').homedir(), "/Media",req.params.id), (err) => {
-    //     console.log(err);
-    // })
-    // // res.redirect("/")
 });
 
 // DELETE route for particular media file
