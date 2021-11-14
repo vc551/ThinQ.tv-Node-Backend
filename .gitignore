@@ -1,7 +1,11 @@
+**/.DS_Store
+*/.DS_Store
+*/.DS_Store?
+**/.DS_Store?
+**.DS_Store
 .gitignore
 uploads/
 cert/server.cert
 cert/server.key
 public/Media
 piInstallScript.sh
-**/.DS_Store
