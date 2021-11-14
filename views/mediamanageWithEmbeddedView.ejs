@@ -16,7 +16,7 @@
             </div>
         </div>
         <% if (fileInfo[0] == 'Image') { %>
-            <img class = "media-content rounded shadow mt-4" src="/media/<%= fileName %>" alt="<%= fileName %>">
+            <img class = "media-content rounded shadow mt-4" src="/Media/<%= fileName %>" alt="<%= fileName %>">
         <% } else if (fileInfo[0] == 'Video') { %>
             <video controls autoplay muted class = "media-content rounded shadow mt-4" src = "/Media/<%= fileName %>" alt="<%= fileName %>"></video>
         <% } %>
