@@ -9,3 +9,4 @@ cert/server.cert
 cert/server.key
 public/Media
 piInstallScript.sh
+buildguide.md
